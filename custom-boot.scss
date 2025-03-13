@@ -1,0 +1,41 @@
+//versione personalizzata
+
+//sovrascrivo colori
+
+@import "scss/functions";
+@import "scss/variables";
+
+$new-primary: rgb(134, 37, 165);
+$new-secondary: rgb(243, 238, 255);
+$gigio: #8b0f2a;
+
+$new-theme-colors: (
+  "primary": $new-primary,
+  "secondary": $new-secondary,
+  "gigio": $gigio,
+);
+
+//creato mappa da fondere con i colori originali $theme-colors era il nome della mappa originale di bootstrap
+
+$theme-colors: map-merge($theme-colors, $new-theme-colors);
+
+//ho creato la mia mappa colori sovrascrivendo/aggiungendo modifiche ora va usata per creare il tutto (testi,bg,tost...)
+
+//importo il foglio che contiene tutti gli import
+//con il flag !defult presente nella mappa originale di colori di bootstrap fa si che non venga ricreata la mappa se aggiungo la mia mappa variabile, cosi se c'è una modifica nella roba gia scritta rimane la base di bootstrap, altrimenti in automatico viene sostituito con la tua nua mappa di colori
+
+$font-sizes: map-merge(
+  $font-sizes,
+  (
+    10: $font-size-base * 1.2,
+  )
+);
+
+$border-width: map-merge(
+  $border-width,
+  (
+    10: 2rem,
+  )
+);
+
+@import "./scss/bootstrap.scss";
