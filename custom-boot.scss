@@ -62,7 +62,7 @@ $spacers: (
 $spacers: map-merge(
   $spacers,
   (
-    6: $spacer * 0.8,
+    6: $spacer * 0.32,
   )
 );
 
