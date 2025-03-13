@@ -49,4 +49,21 @@ $border-widths: map-merge(
 .border-6 {
   border-width: map-get($border-widths, 6);
 }
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+$spacers: map-merge(
+  $spacers,
+  (
+    6: $spacer * 0.8,
+  )
+);
+
 @import "./scss/bootstrap.scss";
