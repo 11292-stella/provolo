@@ -31,11 +31,22 @@ $font-sizes: map-merge(
   )
 );
 
-$border-width: map-merge(
-  $border-width,
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+) !default;
+
+$border-widths: map-merge(
+  $border-widths,
   (
-    10: 2rem,
+    6: 6px,
   )
 );
 
+.border-6 {
+  border-width: map-get($border-widths, 6);
+}
 @import "./scss/bootstrap.scss";
